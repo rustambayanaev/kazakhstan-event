@@ -13,7 +13,7 @@
     }
   ],
   "env": {
-    "JWT_SECRET": "@jwt_secret",
-    "MONGO_URL": "@mongo_url"
+    "JWT_SECRET": "bsbsfbrnsftentwnnwnwn",
+    "MONGO_URL": "mongodb+srv://mahadarshad214:mahad123@cluster0.hj4lh.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
   }
 }
