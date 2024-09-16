@@ -44,9 +44,11 @@ export default function AddEvent() {
       .post("/createEvent", data)
       .then((response) => {
         console.log("Event posted successfully:", response.data);
+        window.alert("Event created successfully!");
       })
       .catch((error) => {
         console.error("Error posting event:", error);
+        window.alert("Error creating event. Please try again.");
       });
   };
 
