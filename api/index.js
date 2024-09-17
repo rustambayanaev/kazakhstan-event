@@ -18,10 +18,16 @@ const jwtSecret = process.env.JWT_SECRET;
 
 app.use(express.json());
 app.use(cookieParser());
+
+const allowedOrigin =
+  process.env.NODE_ENV === "production"
+    ? "https://eventwave-client.onrender.com"
+    : "http://localhost:5173";
+
 app.use(
   cors({
     credentials: true,
-    origin: "https://eventwave-client.onrender.com",
+    origin: allowedOrigin,
   })
 );
 
