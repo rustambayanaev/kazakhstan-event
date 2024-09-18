@@ -57,7 +57,7 @@ export default function IndexPage() {
       {/* Banner Image */}
       <div className="relative">
         <img
-          src="../src/assets/banner.jpg"
+          src="../assets/banner.jpg"
           alt="Banner"
           className="w-full object-cover h-48 sm:h-64 lg:h-80"
         />

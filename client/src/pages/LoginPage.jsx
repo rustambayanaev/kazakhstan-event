@@ -169,9 +169,9 @@ export default function LoginPage() {
 
       <div className="hidden lg:flex flex-col items-center lg:ml-10 mt-8 lg:mt-0">
         <div className="text-3xl font-black mb-4 text-center">Welcome to</div>
-        <img src="../src/assets/logo.png" alt="Logo" className="w-40 mb-4" />
+        <img src="../assets/logo.png" alt="Logo" className="w-40 mb-4" />
         <img
-          src="../src/assets/signinpic.svg"
+          src="../assets/signinpic.svg"
           alt="Sign In"
           className="w-full max-w-md"
         />

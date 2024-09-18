@@ -61,7 +61,7 @@ export default function Header() {
     <div>
       <header className="flex items-center justify-between py-3 px-6 bg-white shadow-md">
         <Link to="/" className="flex items-center">
-          <img src="../src/assets/logo.png" alt="Logo" className="w-24 h-8" />
+          <img src="../assets/logo.png" alt="Logo" className="w-24 h-8" />
         </Link>
 
         {/* ----------- Mobile and Tablet Menu (Hamburger) ----------- */}

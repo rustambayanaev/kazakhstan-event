@@ -40,15 +40,11 @@ export default function RegisterPage() {
         <div className="flex flex-col gap-3 mb-8">
           <div className="text-3xl font-black">Welcome to</div>
           <div>
-            <img src="../src/assets/logo.png" alt="Logo" className="w-48" />
+            <img src="../assets/logo.png" alt="Logo" className="w-48" />
           </div>
         </div>
         <div className="w-80 mt-6">
-          <img
-            src="../src/assets/signuppic.svg"
-            alt="Sign Up"
-            className="w-full"
-          />
+          <img src="../assets/signuppic.svg" alt="Sign Up" className="w-full" />
         </div>
       </div>
 

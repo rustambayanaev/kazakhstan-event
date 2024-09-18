@@ -60,7 +60,7 @@ export default function EventPage() {
 
       {/* Demo image, delete later */}
       <img
-        src="../src/assets/event-page.jpg"
+        src="../assets/event-page.jpg"
         alt=""
         className="rounded-lg object-cover w-full h-auto max-h-[400px] sm:max-h-[500px] mt-5"
       />
