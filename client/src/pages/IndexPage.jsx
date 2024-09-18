@@ -59,7 +59,7 @@ export default function IndexPage() {
         <img
           src="../assets/banner.jpg"
           alt="Banner"
-          className="w-full object-cover h-48 sm:h-64 lg:h-80"
+          className="w-full h-full object-cover"
         />
       </div>
 
