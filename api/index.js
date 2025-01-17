@@ -21,7 +21,7 @@ app.use(cookieParser());
 
 const allowedOrigin =
   process.env.NODE_ENV === "production"
-    ? "https://event-wave.netlify.app"
+    ? "https://eventwave-client.onrender.com"
     : "http://localhost:5173";
 
 app.use(
