@@ -21,7 +21,7 @@ app.use(cookieParser());
 
 const allowedOrigin =
   process.env.NODE_ENV === "production"
-    ? "https://eventwave-client.onrender.com"
+    ? "https://event-wave.netlify.app"
     : "http://localhost:5173";
 
 app.use(
@@ -31,7 +31,14 @@ app.use(
   })
 );
 
-mongoose.connect(process.env.MONGO_URL);
+mongoose
+  .connect(process.env.MONGO_URL)
+  .then(() => {
+    console.log("MongoDB connected successfully");
+  })
+  .catch((err) => {
+    console.error("MongoDB connection error:", err);
+  });
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
