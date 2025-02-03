@@ -123,21 +123,10 @@ export default function Header() {
             <Link to="/useraccount" className="font-semibold text-sm">
               {user.name.toUpperCase()}
             </Link>
-            {/* <BsFillCaretDownFill
-              className="h-5 w-5 cursor-pointer"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            /> */}
             <button onClick={logout} className="flex items-center text-sm">
               <span className="mr-1">Log out</span> <RxExit />
             </button>
           </div>
-        )}
-
-        {/* ----------- Sign In Button for Desktop Only ----------- */}
-        {!user && (
-          <Link to="/login" className="hidden lg:block">
-            <button className="primary text-sm">Sign In</button>
-          </Link>
         )}
 
         {/* ----------- Dropdown for User Profile (Mobile & Tablet) ----------- */}
@@ -161,12 +150,14 @@ export default function Header() {
             <Link to="/calendar" className="block py-2 px-4 hover:bg-gray-100">
               Calendar
             </Link>
-            <Link
-              to="/useraccount"
-              className="block py-2 px-4 hover:bg-gray-100"
-            >
-              My Account
-            </Link>
+            {!!user && ( // ✅ Only show "My Account" if logged in
+              <Link
+                to="/useraccount"
+                className="block py-2 px-4 hover:bg-gray-100"
+              >
+                My Account
+              </Link>
+            )}
             <button
               onClick={logout}
               className="block py-2 px-4 text-left hover:bg-gray-100"
@@ -180,34 +171,6 @@ export default function Header() {
         {isMobileMenuOpen && (
           <div className="lg:hidden absolute top-14 left-0 right-0 bg-white shadow-lg z-20 py-2">
             <div className="flex flex-col px-4">
-              {/* Mobile and Tablet Search Bar */}
-              <div className="flex items-center bg-white rounded-lg py-1 px-2 shadow-sm mb-4">
-                <button className="p-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
-                    />
-                  </svg>
-                </button>
-                <div ref={searchInputRef} className="relative w-full">
-                  <input
-                    type="text"
-                    placeholder="Search"
-                    value={searchQuery}
-                    onChange={handleSearchInputChange}
-                    className="text-sm text-black outline-none w-full px-2 py-1"
-                  />
-                </div>
-              </div>
               <Link to="/createEvent" className="py-2 hover:bg-gray-100">
                 Create Event
               </Link>
@@ -220,9 +183,11 @@ export default function Header() {
               <Link to="/calendar" className="py-2 hover:bg-gray-100">
                 Calendar
               </Link>
-              <Link to="/useraccount" className="py-2 hover:bg-gray-100">
-                My Account
-              </Link>
+              {!!user && ( // ✅ Only show "My Account" if logged in
+                <Link to="/useraccount" className="py-2 hover:bg-gray-100">
+                  My Account
+                </Link>
+              )}
               {!!user && (
                 <button
                   onClick={logout}
