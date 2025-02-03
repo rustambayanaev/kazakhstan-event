@@ -19,7 +19,7 @@ const jwtSecret = process.env.JWT_SECRET;
 app.use(express.json());
 app.use(cookieParser());
 
-app.options("*", cors());
+// app.options("*", cors());
 
 const allowedOrigin =
   process.env.NODE_ENV === "production"
