@@ -3,8 +3,6 @@ import { Link, Navigate } from "react-router-dom";
 import axios from "axios";
 import { UserContext } from "../UserContext";
 
-const API_URL = import.meta.env.VITE_API_URL;
-
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -26,10 +24,7 @@ export default function LoginPage() {
     ev.preventDefault();
 
     try {
-      const { data } = await axios.post(`${API_URL}/login`, {
-        email,
-        password,
-      });
+      const { data } = await axios.post("/login", { email, password });
       setUser(data);
       alert("Login success");
 

@@ -64,151 +64,112 @@ export default function Header() {
           <img src="../assets/logo.png" alt="Logo" className="w-24 h-8" />
         </Link>
 
-        {/* ----------- Mobile and Tablet Menu (Hamburger) ----------- */}
-        <button
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="lg:hidden text-2xl"
-        >
-          <FiMenu />
-        </button>
+        {/* ----------- Show "Sign In" Button Only If NOT Logged In ----------- */}
+        {!user && (
+          <Link to="/login" className="text-sm">
+            <button className="primary">Sign In</button>
+          </Link>
+        )}
 
-        {/* ----------- Search Bar (Desktop) ----------- */}
-        <div className="hidden lg:flex items-center bg-white rounded-lg py-1 px-4 shadow-sm">
-          <button className="p-2">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="w-5 h-5"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
-              />
-            </svg>
-          </button>
-          <div ref={searchInputRef} className="relative w-full">
-            <input
-              type="text"
-              placeholder="Search"
-              value={searchQuery}
-              onChange={handleSearchInputChange}
-              className="text-sm text-black outline-none w-full px-2 py-1"
-            />
-          </div>
-        </div>
-
-        {/* ----------- User Options for Desktop ----------- */}
-        <div className="hidden lg:flex gap-6 text-sm">
-          <Link to="/createEvent" className="hover:text-primary">
-            Create Event
-          </Link>
-          <Link to="/wallet" className="hover:text-primary">
-            Wallet
-          </Link>
-          <Link to="/verification" className="hover:text-primary">
-            Center
-          </Link>
-          <Link to="/calendar" className="hover:text-primary">
-            Calendar
-          </Link>
-        </div>
-
-        {/* ----------- User Profile and Dropdown for Large Screens ----------- */}
+        {/* ----------- Show All Options Only After Login ----------- */}
         {!!user && (
-          <div className="hidden lg:flex items-center gap-2">
-            <Link to="/useraccount" className="font-semibold text-sm">
-              {user.name.toUpperCase()}
-            </Link>
-            <button onClick={logout} className="flex items-center text-sm">
-              <span className="mr-1">Log out</span> <RxExit />
-            </button>
-          </div>
-        )}
-
-        {/* ----------- Dropdown for User Profile (Mobile & Tablet) ----------- */}
-        {isMenuOpen && !!user && (
-          <div className="absolute right-0 top-16 bg-white shadow-md rounded-lg z-10 py-2 w-48 lg:hidden">
-            <Link
-              to="/createEvent"
-              className="block py-2 px-4 hover:bg-gray-100"
-            >
-              Create Event
-            </Link>
-            <Link to="/wallet" className="block py-2 px-4 hover:bg-gray-100">
-              Wallet
-            </Link>
-            <Link
-              to="/verification"
-              className="block py-2 px-4 hover:bg-gray-100"
-            >
-              Center
-            </Link>
-            <Link to="/calendar" className="block py-2 px-4 hover:bg-gray-100">
-              Calendar
-            </Link>
-            {!!user && ( // ✅ Only show "My Account" if logged in
-              <Link
-                to="/useraccount"
-                className="block py-2 px-4 hover:bg-gray-100"
-              >
-                My Account
-              </Link>
-            )}
+          <>
+            {/* ----------- Mobile & Tablet Menu Button (Only Show After Login) ----------- */}
             <button
-              onClick={logout}
-              className="block py-2 px-4 text-left hover:bg-gray-100"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="lg:hidden text-2xl"
             >
-              Log out
+              <FiMenu />
             </button>
-          </div>
-        )}
 
-        {/* ----------- Mobile and Tablet Menu (Expanded View) ----------- */}
-        {isMobileMenuOpen && (
-          <div className="lg:hidden absolute top-14 left-0 right-0 bg-white shadow-lg z-20 py-2">
-            <div className="flex flex-col px-4">
-              <Link to="/createEvent" className="py-2 hover:bg-gray-100">
+            {/* Desktop Menu */}
+            <div className="hidden lg:flex gap-6 text-sm">
+              <Link to="/createEvent" className="hover:text-primary">
                 Create Event
               </Link>
-              <Link to="/wallet" className="py-2 hover:bg-gray-100">
+              <Link to="/wallet" className="hover:text-primary">
                 Wallet
               </Link>
-              <Link to="/verification" className="py-2 hover:bg-gray-100">
+              <Link to="/verification" className="hover:text-primary">
                 Center
               </Link>
-              <Link to="/calendar" className="py-2 hover:bg-gray-100">
+              <Link to="/calendar" className="hover:text-primary">
                 Calendar
               </Link>
-              {!!user && ( // ✅ Only show "My Account" if logged in
-                <Link to="/useraccount" className="py-2 hover:bg-gray-100">
-                  My Account
+
+              {/* User Profile and Logout */}
+              <div className="flex items-center gap-2">
+                <Link to="/useraccount" className="font-semibold text-sm">
+                  {user.name.toUpperCase()}
                 </Link>
-              )}
-              {!!user && (
-                <button
-                  onClick={logout}
-                  className="py-2 hover:bg-gray-100 text-left w-full"
-                >
-                  Log out
+                <button onClick={logout} className="flex items-center text-sm">
+                  <span className="mr-1">Log out</span> <RxExit />
                 </button>
-              )}
-              {!user && (
-                <Link to="/login">
-                  <button className="py-2 hover:bg-gray-100 text-left w-full">
-                    Sign In
-                  </button>
-                </Link>
-              )}
+              </div>
             </div>
-          </div>
+
+            {/* Mobile & Tablet Menu (Dropdown) */}
+            {isMobileMenuOpen && (
+              <div className="lg:hidden absolute top-14 left-0 right-0 bg-white shadow-lg z-20 py-2">
+                <div className="flex flex-col px-4">
+                  <Link to="/createEvent" className="py-2 hover:bg-gray-100">
+                    Create Event
+                  </Link>
+                  <Link to="/wallet" className="py-2 hover:bg-gray-100">
+                    Wallet
+                  </Link>
+                  <Link to="/verification" className="py-2 hover:bg-gray-100">
+                    Center
+                  </Link>
+                  <Link to="/calendar" className="py-2 hover:bg-gray-100">
+                    Calendar
+                  </Link>
+                  <Link to="/useraccount" className="py-2 hover:bg-gray-100">
+                    My Account
+                  </Link>
+                  <button
+                    onClick={logout}
+                    className="py-2 hover:bg-gray-100 text-left w-full"
+                  >
+                    Log out
+                  </button>
+                </div>
+              </div>
+            )}
+          </>
         )}
       </header>
 
-      {/* ----------- Search Results (Responsive) ----------- */}
+      {/* ----------- Search Bar (For All Screens) ----------- */}
+      <div className="flex items-center bg-white rounded-lg py-1 px-4 shadow-sm w-full">
+        <button className="p-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-5 h-5"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+            />
+          </svg>
+        </button>
+        <div ref={searchInputRef} className="relative w-full">
+          <input
+            type="text"
+            placeholder="Search"
+            value={searchQuery}
+            onChange={handleSearchInputChange} // Apply the search handler
+            className="text-sm text-black outline-none w-full px-2 py-1"
+          />
+        </div>
+      </div>
+
+      {/* ----------- Search Results (For All Screens) ----------- */}
       {searchQuery && (
         <div className="absolute left-0 right-0 top-16 bg-white shadow-lg z-10 p-4">
           {events
