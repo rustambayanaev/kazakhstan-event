@@ -145,7 +145,7 @@ export default function IndexPage() {
                     <div className="flex justify-between items-center">
                       <Link to={`/event/${event._id}`}>
                         <button className="primary flex items-center gap-2 py-2 px-4 rounded-lg text-sm">
-                          Подробнее
+                           Подробнее
                           <BsArrowRightShort className="w-5 h-5" />
                         </button>
                       </Link>
