@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="bg-black text-white h-16 flex items-center justify-center p-4">
       <div className="flex items-center">
         <FaCopyright className="mr-2 text-lg" />
-        <span className="text-sm sm:text-base">EventWave</span>
+        <span className="text-sm sm:text-base">Kazakhstan events</span>
       </div>
     </footer>
   );

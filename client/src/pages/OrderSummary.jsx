@@ -39,7 +39,7 @@ export default function OrderSummary() {
           "
         >
           <IoMdArrowBack className="w-6 h-6" />
-          Back
+          Назад
         </button>
       </Link>
 
@@ -51,38 +51,33 @@ export default function OrderSummary() {
             w-full lg:w-3/4 mb-4 lg:mb-0
           "
         >
-          <h2 className="text-left font-bold text-lg">Terms & Conditions</h2>
+          <h2 className="text-left font-bold text-lg">Условия и положения</h2>
           <ul className="mt-4 space-y-3 text-sm">
             <li>
-              Refunds will be provided for ticket cancellations made up to 14
-              days before the event date. After this period, no refunds will be
-              issued.
+              Возврат средств возможен при отмене билета не позднее, чем за 14 дней до даты мероприятия. После этого
+              срока возвраты не производятся.
             </li>
             <li>
-              Tickets will be delivered to your registered email address as
-              e-tickets. You can print the e-ticket or show it on your mobile
-              device for entry to the event.
+              Билеты будут отправлены на ваш зарегистрированный адрес электронной почты в виде электронных билетов. Вы
+              можете распечатать билет или показать его на мобильном устройстве при входе.
             </li>
             <li>
-              Each individual is allowed to purchase a maximum of 2 tickets for
-              this event to ensure fair distribution.
+              Один человек может приобрести не более 2 билетов на это мероприятие для обеспечения равномерного
+              распределения.
             </li>
             <li>
-              In the rare event of cancellation or postponement, attendees will
-              be notified via email. Refunds will be automatically processed for
-              canceled events.
+              В случае отмены или переноса мероприятия, участники будут уведомлены по электронной почте. Возврат средств
+              за отменённые мероприятия будет произведён автоматически.
             </li>
             <li>
-              Tickets for postponed events will not be refunded and the ticket
-              will be considered valid for the new date.
+              Билеты на перенесённые мероприятия возврату не подлежат и будут действительны на новую дату.
             </li>
             <li>
-              Your privacy is important to us. By using our app, you agree to
-              our privacy policy.
+              Мы заботимся о вашей конфиденциальности. Используя наше приложение, вы соглашаетесь с нашей политикой
+              конфиденциальности.
             </li>
             <li>
-              Before proceeding with your ticket purchase, please review and
-              accept our terms and conditions.
+              Перед покупкой билета, пожалуйста, ознакомьтесь и примите наши условия и положения.
             </li>
           </ul>
         </div>
@@ -94,17 +89,17 @@ export default function OrderSummary() {
             w-full lg:w-1/4
           "
         >
-          <h2 className="text-lg font-bold">Booking Summary</h2>
+          <h2 className="text-lg font-bold">Краткое описание бронирования</h2>
           <div className="mt-4 text-sm">
             <div className="flex justify-between">
               <span>{event.title}</span>
-              <span>PKR. {event.ticketPrice}</span>
+              <span>{event.ticketPrice} Тг.</span>
             </div>
           </div>
           <hr className="my-4 border-gray-300" />
           <div className="text-sm font-bold flex justify-between">
-            <span>SUB TOTAL</span>
-            <span>PKR. {event.ticketPrice}</span>
+            <span>Итоговая сумма</span>
+            <span>{event.ticketPrice} Тг.</span>
           </div>
           <div className="flex items-start mt-4">
             <input
@@ -113,8 +108,7 @@ export default function OrderSummary() {
               onChange={handleCheckboxChange}
             />
             <p className="ml-3 text-sm">
-              I have verified the Event name, date, and time before proceeding
-              to payment. I accept terms and conditions.
+              Я подтвердил название мероприятия, дату и время, прежде чем приступить к оплате. Я принимаю правила и условия.
             </p>
           </div>
           <div className="mt-4">
@@ -125,7 +119,7 @@ export default function OrderSummary() {
                 }`}
                 disabled={!isCheckboxChecked}
               >
-                Proceed
+                Оплатить
               </button>
             </Link>
           </div>

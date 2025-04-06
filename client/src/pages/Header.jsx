@@ -67,7 +67,7 @@ export default function Header() {
         {/* ----------- Show "Sign In" Button Only If NOT Logged In ----------- */}
         {!user && (
           <Link to="/login" className="text-sm">
-            <button className="primary">Sign In</button>
+            <button className="primary">Войти</button>
           </Link>
         )}
 
@@ -85,16 +85,16 @@ export default function Header() {
             {/* Desktop Menu */}
             <div className="hidden lg:flex gap-6 text-sm">
               <Link to="/createEvent" className="hover:text-primary">
-                Create Event
+                Создать событие
               </Link>
               <Link to="/wallet" className="hover:text-primary">
-                Wallet
+                Мои билеты
               </Link>
               <Link to="/verification" className="hover:text-primary">
-                Center
+                Верификация
               </Link>
               <Link to="/calendar" className="hover:text-primary">
-                Calendar
+                Календарь
               </Link>
 
               {/* User Profile and Logout */}
@@ -103,7 +103,7 @@ export default function Header() {
                   {user.name.toUpperCase()}
                 </Link>
                 <button onClick={logout} className="flex items-center text-sm">
-                  <span className="mr-1">Log out</span> <RxExit />
+                  <span className="mr-1">Выйти</span> <RxExit />
                 </button>
               </div>
             </div>
@@ -113,25 +113,25 @@ export default function Header() {
               <div className="lg:hidden absolute top-14 left-0 right-0 bg-white shadow-lg z-20 py-2">
                 <div className="flex flex-col px-4">
                   <Link to="/createEvent" className="py-2 hover:bg-gray-100">
-                    Create Event
+                    Создать событие
                   </Link>
                   <Link to="/wallet" className="py-2 hover:bg-gray-100">
-                    Wallet
+                    Мои билеты
                   </Link>
                   <Link to="/verification" className="py-2 hover:bg-gray-100">
-                    Center
+                    Верификация
                   </Link>
                   <Link to="/calendar" className="py-2 hover:bg-gray-100">
-                    Calendar
+                    Календарь
                   </Link>
                   <Link to="/useraccount" className="py-2 hover:bg-gray-100">
-                    My Account
+                    Мой аккаунт
                   </Link>
                   <button
                     onClick={logout}
                     className="py-2 hover:bg-gray-100 text-left w-full"
                   >
-                    Log out
+                    Выйти
                   </button>
                 </div>
               </div>
@@ -161,7 +161,7 @@ export default function Header() {
         <div ref={searchInputRef} className="relative w-full">
           <input
             type="text"
-            placeholder="Search"
+            placeholder="Найти"
             value={searchQuery}
             onChange={handleSearchInputChange} // Apply the search handler
             className="text-sm text-black outline-none w-full px-2 py-1"

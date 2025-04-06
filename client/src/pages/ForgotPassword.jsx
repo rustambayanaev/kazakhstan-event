@@ -6,7 +6,7 @@ export default function ForgotPassword() {
       <div className="bg-white w-full max-w-sm px-6 py-8 rounded-xl shadow-lg">
         <form className="flex flex-col w-full items-center" onSubmit={() => {}}>
           <h1 className="font-extrabold mb-6 text-primarydark text-xl sm:text-2xl">
-            Forgot Password
+            Забыли пароль
           </h1>
 
           <div className="flex items-center w-full mb-4 border-b border-gray-300">
@@ -34,7 +34,7 @@ export default function ForgotPassword() {
               type="submit"
               className="w-full py-2 px-4 bg-primary text-white rounded-lg shadow hover:bg-primarydark focus:outline-none focus:ring-2 focus:ring-primary"
             >
-              Submit
+              Подтвердить
             </button>
           </div>
 
@@ -54,7 +54,7 @@ export default function ForgotPassword() {
                 clipRule="evenodd"
               />
             </svg>
-            Back
+            Назад
           </Link>
         </form>
       </div>

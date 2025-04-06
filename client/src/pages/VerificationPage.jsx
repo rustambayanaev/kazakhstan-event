@@ -41,13 +41,13 @@ export default function VerificationPage() {
   return (
     <div className="verification-page flex flex-col items-center justify-center p-4 min-h-screen bg-gray-100">
       <h1 className="text-xl md:text-2xl font-bold mb-4 text-center">
-        Account Verification
+        Верификация аккаунта
       </h1>
 
       {status === "pending" && (
         <div className="loading-message text-center">
           <p className="text-sm md:text-base">
-            Please wait while we verify your account...
+            Пожалуйста, подождите, пока мы верифицируем вашу учетную запись...
           </p>
         </div>
       )}
@@ -55,13 +55,13 @@ export default function VerificationPage() {
       {status === "success" && (
         <div className="success-message text-green-600 text-center">
           <p className="text-sm md:text-base">
-            Your account has been verified successfully!
+            Ваша учетная запись успешно подтверждена!
           </p>
           <button
             onClick={handleHome}
             className="inline-flex mt-4 gap-2 p-3 bg-gray-100 justify-center items-center text-blue-700 font-bold rounded-md hover:bg-gray-200 transition duration-300 text-sm md:text-base"
           >
-            Back
+            Назад
           </button>
         </div>
       )}
@@ -74,13 +74,13 @@ export default function VerificationPage() {
               onClick={handleRetry}
               className="bg-red-500 text-white p-2 rounded hover:bg-red-700 transition duration-300 text-sm md:text-base"
             >
-              Retry Verification
+              Повторите попытку
             </button>
             <button
               onClick={handleHome}
               className="bg-blue-500 text-white p-2 rounded hover:bg-blue-700 transition duration-300 text-sm md:text-base"
             >
-              Go to Home
+              Домой
             </button>
           </div>
         </div>

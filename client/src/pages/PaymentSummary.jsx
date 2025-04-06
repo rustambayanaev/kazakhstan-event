@@ -107,7 +107,7 @@ export default function PaymentSummary() {
         },
       };
       const response = await axios.post(`/tickets`, updatedTicketDetails);
-      alert("Ticket Created");
+      alert("Созданный билет");
       setRedirect(true);
     } catch (error) {
       console.error("Error creating ticket:", error);
@@ -136,7 +136,7 @@ export default function PaymentSummary() {
         <Link to={"/event/" + event._id + "/ordersummary"}>
           <button className="inline-flex gap-2 items-center p-3 ml-4 sm:ml-6 bg-gray-100 text-blue-700 font-bold rounded-sm mt-4">
             <IoMdArrowBack className="w-6 h-6" />
-            Back
+            Назад
           </button>
         </Link>
       </div>
@@ -147,13 +147,13 @@ export default function PaymentSummary() {
         <div className="bg-gray-100 p-4 lg:p-8 rounded-md w-full lg:w-3/5">
           {/* Your Details */}
           <div className="space-y-4">
-            <h2 className="text-xl font-bold">Your Details</h2>
+            <h2 className="text-xl font-bold">Ваши данные</h2>
             <input
               type="text"
               name="name"
               value={details.name}
               onChange={handleChangeDetails}
-              placeholder="Name"
+              placeholder="Имя"
               className="input-field w-full h-10 bg-gray-50 border rounded-md p-2.5"
             />
             <input
@@ -169,21 +169,21 @@ export default function PaymentSummary() {
               name="contactNo"
               value={details.contactNo}
               onChange={handleChangeDetails}
-              placeholder="Contact No"
+              placeholder="Контактный номер"
               className="input-field w-full h-10 bg-gray-50 border rounded-md p-2.5"
             />
           </div>
 
           {/* Payment Option */}
           <div className="mt-10 space-y-4">
-            <h2 className="text-xl font-bold">Payment Option</h2>
+            <h2 className="text-xl font-bold">Способ оплаты</h2>
             <div>
               <button
                 type="button"
                 className="px-8 py-3 text-black bg-blue-100 border border-gray-300 rounded-md"
                 disabled
               >
-                Credit / Debit Card
+                Кредитная / Дебетовая карта
               </button>
             </div>
             <input
@@ -222,14 +222,14 @@ export default function PaymentSummary() {
             </div>
             <div className="text-right mt-6">
               <p className="text-sm font-semibold pb-2">
-                Total: PKR. {event.ticketPrice}
+                Сумма: {event.ticketPrice}Тг
               </p>
               <button
                 type="button"
                 onClick={createTicket}
                 className="primary w-full sm:w-48"
               >
-                Make Payment
+                Произвести оплату
               </button>
             </div>
           </div>
@@ -237,14 +237,14 @@ export default function PaymentSummary() {
 
         {/* Right Section - Order Summary */}
         <div className="bg-blue-100 p-4 rounded-md w-full lg:w-1/4">
-          <h2 className="text-xl font-bold mb-4">Order Summary</h2>
+          <h2 className="text-xl font-bold mb-4">Описание заказа</h2>
           <div className="space-y-2">
-            <p>1 Ticket</p>
+            <p>1 Билет</p>
             <p className="text-lg font-semibold">{event.title}</p>
             <p className="text-xs">{event.eventDate.split("T")[0]}</p>
             <p className="text-xs pb-2">{event.eventTime}</p>
             <hr className="border-t border-gray-400 my-2" />
-            <p className="font-bold">Total: PKR. {event.ticketPrice}</p>
+            <p className="font-bold">Сумма: {event.ticketPrice}Тг</p>
           </div>
         </div>
       </div>

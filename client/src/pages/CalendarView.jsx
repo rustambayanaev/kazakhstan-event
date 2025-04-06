@@ -1,4 +1,6 @@
 import axios from "axios";
+import { ru } from "date-fns/locale";
+
 import {
   format,
   startOfMonth,
@@ -54,7 +56,7 @@ export default function CalendarView() {
             <BsCaretLeftFill className="w-5 h-5" />
           </button>
           <span className="text-lg font-semibold">
-            {format(currentMonth, "MMMM yyyy")}
+            {format(currentMonth, "LLLL yyyy", { locale: ru }).replace(/^./, (char) => char.toUpperCase())}
           </span>
           <button
             className="text-primary p-2"
@@ -66,7 +68,7 @@ export default function CalendarView() {
           </button>
         </div>
         <div className="grid grid-cols-7 text-center text-xs sm:text-sm font-semibold border-b border-gray-200">
-          {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((day) => (
+          {["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"].map((day) => (
             <div
               key={day}
               className="p-2 bg-gray-100 text-gray-700 border-r border-gray-200"
@@ -95,7 +97,7 @@ export default function CalendarView() {
                     .map((event) => (
                       <div key={event._id} className="mt-1">
                         <Link to={`/event/${event._id}`}>
-                          <div className="text-white bg-primary rounded p-1 text-xs sm:text-sm">
+                          <div className="text-white bg-primary rounded p-1 text-xs">
                             {event.title.toUpperCase()}
                           </div>
                         </Link>

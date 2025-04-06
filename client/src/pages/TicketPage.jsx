@@ -31,7 +31,7 @@ export default function TicketPage() {
       await axios.delete(`/tickets/${ticketId}`);
 
       fetchTickets();
-      alert("Ticket Deleted");
+      alert("Заявка удалена");
     } catch (error) {
       console.error("Error deleting ticket:", error);
     }
@@ -57,7 +57,7 @@ export default function TicketPage() {
               "
             >
               <IoMdArrowBack className="font-bold w-6 h-6" />
-              Back
+              Назад
             </button>
           </Link>
         </div>
@@ -83,14 +83,14 @@ export default function TicketPage() {
                 </div>
                 <div className="w-full md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    Event Name:
+                    Название события:
                     <br />
                     <span className="font-extrabold text-primarydark">
                       {ticket.ticketDetails.eventname.toUpperCase()}
                     </span>
                   </div>
                   <div>
-                    Date & Time:
+                    Дата и время:
                     <br />
                     <span className="font-extrabold text-primarydark">
                       {ticket.ticketDetails.eventdate.split("T")[0]},{" "}
@@ -98,14 +98,14 @@ export default function TicketPage() {
                     </span>
                   </div>
                   <div>
-                    Name:
+                    Имя:
                     <br />
                     <span className="font-extrabold text-primarydark">
                       {ticket.ticketDetails.name.toUpperCase()}
                     </span>
                   </div>
                   <div>
-                    Price:
+                    Цена:
                     <br />
                     <span className="font-extrabold text-primarydark">
                       Rs. {ticket.ticketDetails.ticketprice}
@@ -119,7 +119,7 @@ export default function TicketPage() {
                     </span>
                   </div>
                   <div>
-                    Ticket ID:
+                    ID билета:
                     <br />
                     <span className="font-extrabold text-primarydark">
                       {ticket.ticketDetails._id}

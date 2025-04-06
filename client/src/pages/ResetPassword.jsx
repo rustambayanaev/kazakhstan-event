@@ -11,7 +11,7 @@ export default function ResetPassword() {
           onSubmit={ResetPassword}
         >
           <h1 className="px-3 font-extrabold mb-5 text-primarydark text-2xl ">
-            Reset Password
+            Сбросить пароль
           </h1>
 
           <div className="input">

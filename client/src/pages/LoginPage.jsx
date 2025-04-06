@@ -26,7 +26,7 @@ export default function LoginPage() {
     try {
       const { data } = await axios.post("/login", { email, password });
       setUser(data);
-      alert("Login success");
+      alert("Успешный вход в систему");
 
       if (rememberMe) {
         localStorage.setItem("rememberedEmail", email);
@@ -38,7 +38,7 @@ export default function LoginPage() {
 
       setRedirect(true);
     } catch (e) {
-      alert("Login failed");
+      alert("Ошибка входа");
     }
   }
 
@@ -51,7 +51,7 @@ export default function LoginPage() {
       <div className="bg-white w-full sm:w-full md:w-4/5 lg:w-1/3 px-6 py-6 rounded-xl shadow-lg">
         <form onSubmit={loginUser} className="flex flex-col">
           <h1 className="text-2xl font-bold mb-5 text-primarydark text-center">
-            Sign In
+            Войти
           </h1>
 
           <div className="flex items-center mb-4">
@@ -138,10 +138,10 @@ export default function LoginPage() {
                 onChange={() => setRememberMe((prev) => !prev)}
                 className="mr-2"
               />
-              Remember Me
+              Запомнить меня
             </label>
             <Link to={"/forgotpassword"} className="text-sm text-primarydark">
-              Forgot Password?
+              Забыли пароль??
             </Link>
           </div>
 
@@ -149,18 +149,18 @@ export default function LoginPage() {
             type="submit"
             className="w-full py-2 bg-primary text-white rounded-md mb-4 hover:bg-primarydark"
           >
-            Sign In
+            Войти
           </button>
 
           <div className="flex flex-col gap-2">
             <Link to={"/register"} className="text-center">
               <button className="w-full py-2 bg-white text-primary border border-primary rounded-md hover:bg-gray-100">
-                Sign Up
+                Зарегистрироваться
               </button>
             </Link>
             <Link to={"/"} className="text-center">
               <button className="w-full py-2 bg-primary text-white rounded-md hover:bg-secondarydark">
-                Back
+                Назад
               </button>
             </Link>
           </div>
@@ -168,7 +168,7 @@ export default function LoginPage() {
       </div>
 
       <div className="hidden lg:flex flex-col items-center lg:ml-10 mt-8 lg:mt-0">
-        <div className="text-3xl font-black mb-4 text-center">Welcome to</div>
+        <div className="text-3xl font-black mb-4 text-center">Добро пожаловать</div>
         <img src="../assets/logo.png" alt="Logo" className="w-40 mb-4" />
         <img
           src="../assets/signinpic.svg"

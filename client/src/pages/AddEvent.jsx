@@ -44,20 +44,20 @@ export default function AddEvent() {
       .post("/createEvent", data)
       .then((response) => {
         console.log("Event posted successfully:", response.data);
-        window.alert("Event created successfully!");
+        window.alert("Событие успешно создано!");
       })
       .catch((error) => {
         console.error("Error posting event:", error);
-        window.alert("Error creating event. Please try again.");
+        window.alert("Ошибка при создании события. Пожалуйста, попробуйте снова.");
       });
   };
 
   return (
     <div className="flex flex-col p-4">
-      <h1 className="text-xl font-bold mb-4">Post an Event</h1>
+      <h1 className="text-xl font-bold mb-4">Опубликовать событие</h1>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <label className="flex flex-col">
-          Title:
+          Название:
           <input
             type="text"
             name="title"
@@ -67,7 +67,7 @@ export default function AddEvent() {
           />
         </label>
         <label className="flex flex-col">
-          Optional:
+          Дополнительно:
           <input
             type="text"
             name="optional"
@@ -77,7 +77,7 @@ export default function AddEvent() {
           />
         </label>
         <label className="flex flex-col">
-          Description:
+          Описание:
           <textarea
             name="description"
             className="rounded p-2 border-2 border-sky-700"
@@ -86,7 +86,7 @@ export default function AddEvent() {
           />
         </label>
         <label className="flex flex-col">
-          Organized By:
+          Организатор:
           <input
             type="text"
             name="organizedBy"
@@ -96,7 +96,7 @@ export default function AddEvent() {
           />
         </label>
         <label className="flex flex-col">
-          Event Date:
+          Дата события:
           <input
             type="date"
             name="eventDate"
@@ -106,7 +106,7 @@ export default function AddEvent() {
           />
         </label>
         <label className="flex flex-col">
-          Event Time:
+          Время события:
           <input
             type="time"
             name="eventTime"
@@ -116,7 +116,7 @@ export default function AddEvent() {
           />
         </label>
         <label className="flex flex-col">
-          Location:
+          Адрес:
           <input
             type="text"
             name="location"
@@ -126,7 +126,7 @@ export default function AddEvent() {
           />
         </label>
         <label className="flex flex-col">
-          Ticket Price:
+          Стоимость билета:
           <input
             type="number"
             name="ticketPrice"
@@ -136,7 +136,7 @@ export default function AddEvent() {
           />
         </label>
         <label className="flex flex-col">
-          Image:
+          Изображение:
           <input
             type="file"
             name="image"
@@ -148,7 +148,7 @@ export default function AddEvent() {
           className="bg-blue-500 text-white p-2 rounded hover:bg-blue-700"
           type="submit"
         >
-          Submit
+          Подтвердить
         </button>
       </form>
     </div>

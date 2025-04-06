@@ -19,7 +19,7 @@ import TicketPage from "./pages/TicketPage";
 import VerificationPage from "./pages/VerificationPage";
 import CreatEvent from "./pages/CreateEvent";
 
-const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:4000";
+const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:3000";
 
 axios.defaults.baseURL = apiUrl;
 axios.defaults.withCredentials = true;

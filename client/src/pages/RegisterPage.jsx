@@ -13,7 +13,7 @@ export default function RegisterPage() {
     ev.preventDefault();
 
     if (password !== confirmPassword) {
-      alert("Passwords do not match");
+      alert("Пароли не совпадают");
       return;
     }
 
@@ -23,10 +23,10 @@ export default function RegisterPage() {
         email,
         password,
       });
-      alert("Registration Successful");
+      alert("Регистрация прошла успешно");
       setRedirect(true);
     } catch (e) {
-      alert("Registration failed");
+      alert("Не удалось выполнить регистрацию");
     }
   }
 
@@ -38,7 +38,7 @@ export default function RegisterPage() {
     <div className="flex flex-col lg:flex-row w-full h-full px-4 py-10 lg:px-10 lg:py-10 justify-center items-center mt-12">
       <div className="hidden lg:flex flex-col items-center lg:items-start lg:w-1/2 xl:w-1/3">
         <div className="flex flex-col gap-3 mb-8">
-          <div className="text-3xl font-black">Welcome to</div>
+          <div className="text-3xl font-black">Добро пожаловать</div>
           <div>
             <img src="../assets/logo.png" alt="Logo" className="w-48" />
           </div>
@@ -51,7 +51,7 @@ export default function RegisterPage() {
       <div className="bg-white w-full sm:w-full md:w-4/5 lg:w-1/2 xl:w-1/3 px-6 py-6 rounded-xl shadow-lg">
         <form className="flex flex-col w-full" onSubmit={registerUser}>
           <h1 className="font-extrabold mb-5 text-primarydark text-2xl text-center">
-            Sign Up
+            Регистрация
           </h1>
 
           <div className="flex items-center mb-4">
@@ -69,7 +69,7 @@ export default function RegisterPage() {
             </svg>
             <input
               type="text"
-              placeholder="Name"
+              placeholder="Имя"
               className="flex-1 border border-gray-300 rounded-md px-3 py-2"
               value={name}
               onChange={(ev) => setName(ev.target.value)}
@@ -113,7 +113,7 @@ export default function RegisterPage() {
             </svg>
             <input
               type="password"
-              placeholder="Password"
+              placeholder="Пароль"
               className="flex-1 border border-gray-300 rounded-md px-3 py-2"
               value={password}
               onChange={(ev) => setPassword(ev.target.value)}
@@ -135,7 +135,7 @@ export default function RegisterPage() {
             </svg>
             <input
               type="password"
-              placeholder="Confirm password"
+              placeholder="Подтвердите пароль"
               className="flex-1 border border-gray-300 rounded-md px-3 py-2"
               value={confirmPassword}
               onChange={(ev) => setConfirmPassword(ev.target.value)}
@@ -147,26 +147,11 @@ export default function RegisterPage() {
               type="submit"
               className="bg-primary text-white rounded-md px-4 py-2 w-full hover:bg-primarydark"
             >
-              Create Account
+              Зарегистрироваться
             </button>
           </div>
 
           <div className="flex flex-col gap-2">
-            <Link to={"/login"}>
-              <button className="text-primary font-bold rounded-md px-4 py-2 w-full border border-primary hover:bg-primary hover:text-white">
-                Sign In
-              </button>
-            </Link>
-            <Link to={"/register"}>
-              <button className="bg-primary text-white font-bold rounded-md px-4 py-2 w-full hover:bg-primarydark">
-                Sign Up
-              </button>
-            </Link>
-            <Link to={"/"} className="text-center">
-              <button className="w-full py-2 bg-primary text-white rounded-md hover:bg-secondarydark">
-                Back
-              </button>
-            </Link>
           </div>
         </form>
       </div>

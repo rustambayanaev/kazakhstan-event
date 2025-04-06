@@ -83,7 +83,7 @@ export default function IndexPage() {
                   <div className="relative aspect-w-16 aspect-h-9">
                     {event.image && (
                       <img
-                        src={`http://localhost:4000/api/${event.image}`}
+                        src={`http://localhost:3000/api/${event.image}`}
                         alt={event.title}
                         className="object-cover w-full h-full"
                       />
@@ -126,17 +126,17 @@ export default function IndexPage() {
                       {event.eventDate.split("T")[0]}, {event.eventTime}
                       <br />
                       {event.ticketPrice === 0
-                        ? "Free"
-                        : "Rs. " + event.ticketPrice}
+                        ? "Бесплатно"
+                        : event.ticketPrice + " Тг."}
                     </div>
 
                     <p className="text-xs truncate mb-2">{event.description}</p>
 
                     <div className="text-sm text-primarydark mb-2">
-                      Organized By: <br />
+                      Организатор: <br />
                       <span className="font-bold">{event.organizedBy}</span>
                       <br />
-                      Created By: <br />
+                      Создано: <br />
                       <span className="font-semibold">
                         {event.owner.toUpperCase()}
                       </span>
@@ -145,7 +145,7 @@ export default function IndexPage() {
                     <div className="flex justify-between items-center">
                       <Link to={`/event/${event._id}`}>
                         <button className="primary flex items-center gap-2 py-2 px-4 rounded-lg text-sm">
-                          Book Ticket
+                          Подробнее
                           <BsArrowRightShort className="w-5 h-5" />
                         </button>
                       </Link>

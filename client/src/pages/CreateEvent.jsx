@@ -41,7 +41,7 @@ export default function CreatEvent() {
 <div className="px-2">
   <div className="flex justify-evenly">
   <div className="flex w-2/3 ">
-    <h1>Basic Information</h1>
+    <h1>Основная информация</h1>
   </div>
   </div><br></br>
       <div className="flex justify-around">
@@ -148,7 +148,7 @@ export default function CreatEvent() {
       <div className="flex justify-evenly">
         <div className="flex w-2/3">
           <h1 className="font-bold">
-            <b> Budget Report </b>
+            <b> Бюджетный отчет </b>
           </h1>
         </div>
       </div>
@@ -157,7 +157,7 @@ export default function CreatEvent() {
       <div className="flex justify-evenly">
         <div className="flex w-2/3">
           <h1>
-          Expected Income Details
+            Подробная информация об ожидаемом доходе
           </h1>
         </div>
       </div><br></br>
@@ -236,7 +236,7 @@ export default function CreatEvent() {
       <div className="flex justify-evenly">
         <div className="flex w-2/3">
           <h1>
-          Expected Expenses Details
+            Подробная информация об ожидаемых расходах
           </h1>
         </div>
       </div><br></br>
@@ -323,7 +323,7 @@ export default function CreatEvent() {
       <div className="flex justify-evenly">
             <div className="flex w-2/3">
               <h1>
-                Tickets Details
+                Подробная информация о <билетах></билетах>
               </h1>
             </div>
           </div>

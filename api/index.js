@@ -18,6 +18,7 @@ const jwtSecret = process.env.JWT_SECRET;
 
 app.use(express.json());
 app.use(cookieParser());
+app.use('/api/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // app.options("*", cors());
 
@@ -54,6 +55,10 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage });
+
+app.get("/", (req, res) => {
+  res.send("Welcome to EventWave API!");
+});
 
 app.get("/test", (req, res) => {
   res.json("test ok");
@@ -144,7 +149,10 @@ const Event = mongoose.model("Event", eventSchema);
 app.post("/createEvent", upload.single("image"), async (req, res) => {
   try {
     const eventData = req.body;
-    eventData.image = req.file ? req.file.path : "";
+    if (req.file) {
+      // Заменяем обратные слэши на прямые и добавляем базовый URL
+      eventData.image = req.file.path.replace("\\", "/"); // Преобразуем путь для корректного отображения
+    }
     const newEvent = new Event(eventData);
     await newEvent.save();
     res.status(201).json(newEvent);
@@ -286,7 +294,7 @@ app.delete("/tickets/:id", async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
