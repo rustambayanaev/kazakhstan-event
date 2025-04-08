@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { BsArrowRightShort } from "react-icons/bs";
 import { BiLike } from "react-icons/bi";
+
+
 // import { BiTrash } from "react-icons/bi";
 
 export default function IndexPage() {

@@ -17,6 +17,7 @@ import OrderSummary from "./pages/OrderSummary";
 import PaymentSummary from "./pages/PaymentSummary";
 import TicketPage from "./pages/TicketPage";
 import VerificationPage from "./pages/VerificationPage";
+import GoogleCalendarPage from "./pages/GoogleCalendarPage";
 import CreatEvent from "./pages/CreateEvent";
 
 const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:3000";
@@ -37,6 +38,7 @@ function App() {
           <Route path="/wallet" element={<TicketPage />} />
           <Route path="/verification" element={<VerificationPage />} />
           <Route path="/event/:id/ordersummary" element={<OrderSummary />} />
+          <Route path="/google-calendar" element={<GoogleCalendarPage />} />
         </Route>
 
         <Route path="/register" element={<RegisterPage />} />

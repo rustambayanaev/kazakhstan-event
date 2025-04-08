@@ -96,6 +96,9 @@ export default function Header() {
               <Link to="/calendar" className="hover:text-primary">
                 Календарь
               </Link>
+              <Link to="/google-calendar" className="hover:text-primary">
+                Календарь Гугл
+              </Link>
 
               {/* User Profile and Logout */}
               <div className="flex items-center gap-2">
